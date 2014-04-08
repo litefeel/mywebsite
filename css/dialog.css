@@ -1,0 +1,65 @@
+#dialogWindow{
+
+    background-position: 0 0;
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    /*opacity: 0.7;*/
+    display: none;
+}
+#dialogWindow .masker{
+    background-color: #CCC;
+    background-position: 0 0;
+    position: relative;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    opacity: 0.7;
+}
+
+#dialogWindow .box{
+    border-style: solid;
+    border-width: 1px;
+    width: 400px;
+    height: 200px;
+    margin:auto;
+    background-color: #FFF;
+    opacity: 1;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+}
+
+#dialogWindow .closeBtn{
+    float: right;
+    margin: 5px;
+    width: 16px;
+    height: 16px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FFF;
+    position: relative;
+    background-image: url("../img/12.png");
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+#dialogWindow .closeBtn:hover{
+    /*background-color: #CCC;*/
+    background-size: 19px 19px;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+}
+#dialogTitle{
+    position: relative;
+    margin: 10px 0 0 10px;
+    font-weight: bold;
+}
+
+#dialogContent{
+    margin: 10px 0 0 10px;
+    position: relative;
+}

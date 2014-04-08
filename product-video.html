@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>产品展示-视频</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style type="text/css">
+    .video{
+        width: 500px;
+        height: 350px;
+    }
+</style>
+<script type="text/javascript" src="js/menu.js"></script>
+</head>
+
+<body>
+<div id="header">
+    <div class="inner">
+        <div id="banner"></div>
+    </div>
+</div>
+<div id="nav">
+    <div class="inner">
+        <ul id="menu">
+            <li class="menu-item"><a href="index.html">首页</a></li>
+            <li class="menu-item"><a href="news.html">产品新闻</a></li>
+            <li class="menu-item current-menu-item" onmousemove="onOverSubmenu(event)"><a href="product-video.html">产品展示</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="product-video.html">产品视频展示</a></li>
+                    <li class="submenu-item"><a href="product-image.html">产品图片展示</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="about.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="inner">
+        <p>
+            这是一个视频展示。
+        </p>
+        <div class="video">
+            <object id="NSPlay" width="500" height="350" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,5,715" standby="Loading Microsoft Windows Media Player components..." type="application/x-oleobject" align="left" hspace="5">
+                <!-- ASX File Name -->
+                <param name="AutoRewind" value=1>
+                <param name="FileName" value="video/test.wmv">
+                <!-- Display Controls -->
+                <param name="ShowControls" value="1">
+                <!-- Display Position Controls -->
+                <param name="ShowPositionControls" value="0">
+                <!-- Display Audio Controls -->
+                <param name="ShowAudioControls" value="1">
+                <!-- Display Tracker Controls -->
+                <param name="ShowTracker" value="0">
+                <!-- Show Display -->
+                <param name="ShowDisplay" value="0">
+                <!-- Display Status Bar -->
+                <param name="ShowStatusBar" value="0">
+                <!-- Diplay Go To Bar -->
+                <param name="ShowGotoBar" value="0">
+                <!-- Display Controls -->
+                <param name="ShowCaptioning" value="0">
+                <!-- Player Autostart -->
+                <param name="AutoStart" value=1>
+                <!-- Animation at Start -->
+                <param name="Volume" value="-2500">
+                <param name="AnimationAtStart" value="0">
+                <!-- Transparent at Start -->
+                <param name="TransparentAtStart" value="0">
+                <!-- Do not allow a change in display size -->
+                <param name="AllowChangeDisplaySize" value="0">
+                <!-- Do not allow scanning -->
+                <param name="AllowScan" value="0">
+                <!-- Do not show contect menu on right mouse click -->
+                <param name="EnableContextMenu" value="0">
+                <!-- Do not allow playback toggling on mouse click -->
+                <param name="ClickToPlay" value="0">
+            </object>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="inner">
+        <span>@copyright 2014 张小庆 HY110300071</span>
+    </div>
+</div>
+</body>

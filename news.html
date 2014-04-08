@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>产品新闻</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript">
+    function onProductClick (event) {
+        var title = event.currentTarget.text;
+        var name = event.currentTarget.name;
+        var msg = "这是新闻内容关于："+name;
+        dialogLib.showDialog(title, msg);
+    }
+</script>
+</head>
+
+<body>
+<div id="header">
+    <div class="inner">
+        <div id="banner"></div>
+    </div>
+</div>
+<div id="nav">
+    <div class="inner">
+        <ul id="menu">
+            <li class="menu-item"><a href="index.html">首页</a></li>
+            <li class="menu-item current-menu-item"><a href="news.html">产品新闻</a></li>
+            <li class="menu-item" onmousemove="onOverSubmenu(event)"><a href="product-video.html">产品展示</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="product-video.html">产品视频展示</a></li>
+                    <li class="submenu-item"><a href="product-image.html">产品图片展示</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="about.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="inner">
+        <p>
+            这是新闻页，请看最新新闻。
+        </p>
+        <ul id="newslist">
+            <li><a href="javascript:(void)" name="new1" onclick="onProductClick(event)">新闻1</a></li>
+            <li><a href="javascript:(void)" name="new2" onclick="onProductClick(event)">新闻2</a></li>
+            <li><a href="javascript:(void)" name="new3" onclick="onProductClick(event)">新闻3</a></li>
+            <li><a href="javascript:(void)" name="new4" onclick="onProductClick(event)">新闻4</a></li>
+            <li><a href="javascript:(void)" name="new5" onclick="onProductClick(event)">新闻5</a></li>
+            <li><a href="javascript:(void)" name="new6" onclick="onProductClick(event)">新闻6</a></li>
+            <li><a href="javascript:(void)" name="new7" onclick="onProductClick(event)">新闻7</a></li>
+            <li><a href="javascript:(void)" name="new8" onclick="onProductClick(event)">新闻8</a></li>
+            <li><a href="javascript:(void)" name="new9" onclick="onProductClick(event)">新闻9</a></li>
+            <li><a href="javascript:(void)" name="new10" onclick="onProductClick(event)">新闻10</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">
+    <div class="inner">
+        <span>@copyright 2014 张小庆 HY110300071</span>
+    </div>
+</div>
+
+<!-- dialog -->
+<div id="dialogWindow">
+    <div id="dialogMasker" class="masker"></div>
+    <div class="box">
+        <div class="button closeBtn" onclick="dialogLib.closeDialog(event)" ></div>
+        <div id="dialogTitle"></div>
+        <div id="dialogContent" class="msgbox">
+            fdsfadsafdsafds
+        </div>
+    </div>
+</div>
+
+</body>

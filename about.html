@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>联系我们</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript">
+    function checkFun(name, password, email) {
+        if(!name || !password || !email || name == password) {
+            return false;
+        }
+        return /^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/.test(name) &&
+                /^(.){5,19}$/.test(password) &&
+                /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/.test(email);
+    }
+    function onSubmitClick (event) {
+        var name = document.getElementById('name').value;
+        var password = document.getElementById('password').value;
+        var email = document.getElementById('email').value;
+        if(!checkFun(name, password, email)) {
+            event.preventDefault();
+            alert("不能通过");
+        }else{
+            var msg = "提交成功！" +
+                "\nname:" + name +
+                "\npassword:" + password +
+                "\nemail:" + email;
+            alert(msg);
+        }
+    }
+</script>
+</head>
+
+<body>
+<div id="header">
+    <div class="inner">
+        <div id="banner"></div>
+    </div>
+</div>
+<div id="nav">
+    <div class="inner">
+        <ul id="menu">
+            <li class="menu-item"><a href="index.html">首页</a></li>
+            <li class="menu-item"><a href="news.html">产品新闻</a></li>
+            <li class="menu-item" onmousemove="onOverSubmenu(event)"><a href="product-video.html">产品展示</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="product-video.html">产品视频展示</a></li>
+                    <li class="submenu-item"><a href="product-image.html">产品图片展示</a></li>
+                </ul>
+            </li>
+            <li class="menu-item current-menu-item"><a href="about.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="inner">
+        <p>这是联系我们页面。</p>
+        <form>
+            <span class="formlabel">用户名</span>
+            <input type="input" id="name" name="name" />
+            <span class="required">*</span>(字母开头的6-20位)<br/>
+            <span class="formlabel">密码</span>
+            <input type="password" id="password" name="password" />
+            <span class="required">*</span>(字母开头的6-20位)<br/>
+            <span class="formlabel">邮件地址</span>
+            <input type="input" id="email" name="email" />
+            <span class="required">*</span><br/>
+            <input type="submit" value="提交" class="button" onclick="onSubmitClick(event)" />
+        </form>
+    </div>
+</div>
+<div id="footer">
+    <div class="inner">
+        <span>@copyright 2014 张小庆 HY110300071</span>
+    </div>
+</div>
+
+</body>

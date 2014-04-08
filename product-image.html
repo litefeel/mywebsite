@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>产品展示-图片</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/photo.css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/photo.js"></script>
+<script type="text/javascript">
+    function onloadEvent (argument) {
+        var photobox = document.getElementById('photobox');
+        imgboxlib.init(photobox, 0);
+    }
+    function select (idx) {
+        // alert(idx);
+        imgboxlib.select(idx);
+    }
+</script>
+</head>
+
+<body onload="onloadEvent()">
+
+<div id="header">
+    <div class="inner">
+        <div id="banner"></div>
+    </div>
+</div>
+<div id="nav">
+    <div class="inner">
+        <ul id="menu">
+            <li class="menu-item"><a href="index.html">首页</a></li>
+            <li class="menu-item"><a href="news.html">产品新闻</a></li>
+            <li class="menu-item current-menu-item" onmousemove="onOverSubmenu(event)"><a href="product-video.html">产品展示</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="product-video.html">产品视频展示</a></li>
+                    <li class="submenu-item"><a href="product-image.html">产品图片展示</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="about.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <div class="inner">
+        <div id="photobox">
+            <!-- <div id="imglist"> -->
+                <img class="photo photo1" src="photo/img1.jpg" >
+                <img class="photo photo2" src="photo/img2.jpg" >
+                <img class="photo photo3" src="photo/img1.jpg" >
+                <img class="photo photo4" src="photo/img2.jpg" >
+                <img class="photo photo5" src="photo/img1.jpg" >
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="inner">
+        <span>@copyright 2014 张小庆 HY110300071</span>
+    </div>
+</div>
+
+</body>
