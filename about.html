@@ -6,27 +6,53 @@
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript">
     function checkFun(name, password, email) {
-        if(!name || !password || !email || name == password) {
-            return false;
+        if (!name) {
+            return "用户名不能为空！"
         }
-        return /^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/.test(name) &&
-                /^(.){5,19}$/.test(password) &&
-                /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/.test(email);
+        if (!/^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/.test(name)) {
+            return "用户名格式错误！";
+        }
+        if (!password) {
+            return "密码不能为空！"
+        }
+        if (name == password) {
+            return "密码不能与用户名相同！"
+        }
+        if (!/^(.){5,19}$/.test(password)) {
+            return "密码格式错误！";
+        }
+        if (!email) {
+            return "电子邮箱不能为空！"
+        }
+        if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/.test(email)) {
+            return "电子邮箱格式错误！";
+        }
+        return null;
     }
     function onSubmitClick (event) {
         var name = document.getElementById('name').value;
         var password = document.getElementById('password').value;
         var email = document.getElementById('email').value;
-        if(!checkFun(name, password, email)) {
+        var errMsg = document.getElementById('form-msg');
+        var err = checkFun(name, password, email);
+        if (err != null) {
             event.preventDefault();
-            alert("不能通过");
+            errMsg.innerHTML = err + "<br/>";
+            errMsg.style.display = "inline-block";
         }else{
+            errMsg.style.display = "none";
             var msg = "提交成功！" +
                 "\nname:" + name +
                 "\npassword:" + password +
                 "\nemail:" + email;
             alert(msg);
         }
+    }
+    function clearAllInput () {
+        document.getElementById('name').value = '';
+        document.getElementById('password').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('form-msg').style.display = "none";
     }
 </script>
 </head>
@@ -56,17 +82,22 @@
 <div id="content">
     <div class="inner">
         <p>这是联系我们页面。</p>
+        <div id="form-msg"></div>
         <form>
-            <span class="formlabel">用户名</span>
-            <input type="input" id="name" name="name" />
-            <span class="required">*</span>(字母开头的6-20位)<br/>
-            <span class="formlabel">密码</span>
-            <input type="password" id="password" name="password" />
-            <span class="required">*</span>(字母开头的6-20位)<br/>
-            <span class="formlabel">邮件地址</span>
-            <input type="input" id="email" name="email" />
+            <label class="formlabel" for="name">用户名</label>
+            <input type="input" id="name" name="name" class="form-input" />
+            <span class="required">*</span>(字母开头且6-20位)<br/>
+            <div class="clearfix"></div>
+            <label class="formlabel" for="password">密码</label>
+            <input type="password" id="password" name="password" class="form-input" />
+            <span class="required">*</span>(字母开头且6-20位)<br/>
+            <div class="clearfix"></div>
+            <label class="formlabel" for="email">电子邮箱</label>
+            <input type="input" id="email" name="email" class="form-input" />
             <span class="required">*</span><br/>
-            <input type="submit" value="提交" class="button" onclick="onSubmitClick(event)" />
+            <div class="clearfix"></div>
+            <input type="submit" value="提交" onclick="onSubmitClick(event)" />
+            <input type="button" value="清空" onclick="clearAllInput()" />
         </form>
     </div>
 </div>

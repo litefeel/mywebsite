@@ -4,7 +4,9 @@ body{
 .button{
     cursor: pointer;
 }
-
+.clearfix{
+    clear: both;
+}
 .inner{
     width:950px;
     margin:0 auto;
@@ -106,14 +108,13 @@ body{
 /*content*/
 #content{
     width: 100%;
-    /*border-style: solid;*/
     border-color: #F00;
     padding: 10px;
 }
 
 /*footer*/
 #footer{
-    background-color: #EEE;
+    background-color: #DDD;
     width: 100%;
     padding: 20px 5px;
     border-width: 1px 0 0 0;
@@ -124,6 +125,27 @@ body{
 
 /*      form      */
 .formlabel{
-    width: 70px;
-    min-width: 70px;
+    width: 100px;
+    float: left;
+    margin: 2px 0;
+}
+.required{
+    color: #F00;
+}
+.form-input{
+    width: 160px;
+    border-color: #999;
+    border-width: 1px;
+    border-style: solid;
+
+}
+#form-msg{
+    display: none;
+    color: #F00;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-color: #DDD;
+    border-width: 1px;
+    border-style: solid;
 }
