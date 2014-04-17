@@ -1,5 +1,6 @@
 (function () {
 imgboxlib = {}
+var msgbox = null;
 var curIdx = -1;
 var imgList = null;
 var imgLen = 0;
@@ -25,6 +26,9 @@ imgboxlib.init = function (imgboxElem, _curIdx) {
     if (0 == imgLen) {
         return;
     }
+
+    msgbox = getElementByClassName("msgbox", imgboxElem);
+
     imgList = [];
     for (var i = 0; i < imgLen; i++) {
         imgList[i] = list[i];
@@ -50,7 +54,7 @@ function moving () {
         intervalHandler = 0;
     }
     for (var i = 0; i < imgLen; i++) {
-        imgList[i].style.left = moveStartList[i] + time / 1 * moveLenList[i];
+        imgList[i].style.left = moveStartList[i] + time / 1 * moveLenList[i]+"px";
     }
 }
 
@@ -71,6 +75,10 @@ imgboxlib.select = function (idx) {
     clearInterval(intervalHandler);
     time = 0;
     intervalHandler = setInterval(moving, 1/60.0);
+
+    if (msgbox) {
+        msgbox.innerText = "这是第"+(idx+1)+"个图片的信息。";
+    }
 };
 
-}());
+})();
